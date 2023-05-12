@@ -9,6 +9,8 @@ async function main() {
     { id: 1, name: 'Online', price: 100, isRemote: true, includesHotel: false },
   ];
 
+  await prisma.ticketType.deleteMany({});
+
   await prisma.ticketType.createMany({
     data: ticketType,
   });
