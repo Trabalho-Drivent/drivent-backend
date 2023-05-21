@@ -9,11 +9,46 @@ async function main() {
     { id: 1, name: 'Online', price: 100, isRemote: true, includesHotel: false },
   ];
 
-  await prisma.ticketType.deleteMany({});
+  const hotel = [
+    { id: 1, name: 'Hotel Atlântico', image: 'https://delmond.com.br/wp-content/uploads/2023/01/SNT_7138.jpg' },
+    { id: 2, name: 'Hotel Canabrava', image: 'https://delmond.com.br/wp-content/uploads/2021/12/piscina-delmond-hotel-8.jpg' },
+    { id: 3, name: 'Hotel Tororomba', image: 'https://kembalihotel.com/images/opengraph/kembali-hotel-praia-porto-de-galinhas-2.jpg' },
+  ];
 
+  const room = [
+    { name: '1', capacity: 2, hotelId: 1 },
+    { name: '2', capacity: 3, hotelId: 1 },
+    { name: '3', capacity: 3, hotelId: 1 },
+    { name: '4', capacity: 1, hotelId: 1 },
+    { name: '5', capacity: 2, hotelId: 1 },
+    { name: '6', capacity: 3, hotelId: 1 },
+    { name: '1', capacity: 2, hotelId: 2 },
+    { name: '2', capacity: 3, hotelId: 2 },
+    { name: '3', capacity: 2, hotelId: 2 },
+    { name: '4', capacity: 2, hotelId: 2 },
+    { name: '1', capacity: 3, hotelId: 3 },
+    { name: '2', capacity: 3, hotelId: 3 },
+    { name: '3', capacity: 1, hotelId: 3 },
+    { name: '4', capacity: 2, hotelId: 3 },
+    { name: '5', capacity: 2, hotelId: 3 },
+  ];
+
+  
+  await prisma.hotel.deleteMany({});
+  await prisma.hotel.createMany({
+    data: hotel,
+  });
+
+  await prisma.room.deleteMany({});
+  await prisma.room.createMany({
+    data: room,
+  });
+
+  await prisma.ticketType.deleteMany({});
   await prisma.ticketType.createMany({
     data: ticketType,
   });
+  
   let event = await prisma.event.findFirst();
   if (!event) {
     event = await prisma.event.create({
