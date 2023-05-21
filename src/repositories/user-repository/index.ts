@@ -21,9 +21,25 @@ async function create(data: Prisma.UserUncheckedCreateInput) {
   });
 }
 
+async function findByEmailAndToken(email: string) {
+  return prisma.user.findUnique({
+    where: {
+      email,
+    },
+    select: {
+      Session: {
+        select: {
+          token: true,
+        },
+      },
+    },
+  });
+}
+
 const userRepository = {
   findByEmail,
   create,
+  findByEmailAndToken,
 };
 
 export default userRepository;
