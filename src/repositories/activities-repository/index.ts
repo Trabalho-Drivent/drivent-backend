@@ -2,11 +2,11 @@
 import { prisma } from '@/config';
 
 async function getActivitiesByParams(date: string) {
-  const newDate = new Date(date);
   return prisma.activitiesSchedule.findMany({
     where: {
       startsAt: {
-        equals: newDate,
+        gte: new Date(`${date}T00:00:00Z`),
+        lt: new Date(`${date}T23:59:59Z`),
       },
     },
   });
