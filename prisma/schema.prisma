@@ -142,8 +142,8 @@ model Activities {
   name               String
   slot               Int
   scheduleId         Int
-  createdAt          DateTime?          @default(dbgenerated("'2023-05-23 22:15:35.995523'::timestamp without time zone")) @db.Timestamp(6)
-  updatedAt          DateTime?          @default(dbgenerated("'2023-05-23 22:15:35.995523'::timestamp without time zone")) @db.Timestamp(6)
+  createdAt          DateTime?          @default(dbgenerated("'2023-05-24 10:56:58.530663'::timestamp without time zone")) @db.Timestamp(6)
+  updatedAt          DateTime?          @default(dbgenerated("'2023-05-24 10:56:58.530663'::timestamp without time zone")) @db.Timestamp(6)
   ActivitiesSchedule ActivitiesSchedule @relation(fields: [scheduleId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "Activities_fk0")
   UserActivities     UserActivities[]
 }
@@ -156,8 +156,8 @@ model ActivitiesLocal {
 
 model ActivitiesSchedule {
   id              Int             @id(map: "ActivitiesSchedule_pk") @default(autoincrement())
-  startsAt        DateTime        @db.Date
-  endsAt          DateTime        @db.Date
+  startsAt        DateTime        @db.Timestamp(6)
+  endsAt          DateTime        @db.Timestamp(6)
   localId         Int
   ActivitiesLocal ActivitiesLocal @relation(fields: [localId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ActivitiesSchedule_fk0")
   Activities      Activities[]
