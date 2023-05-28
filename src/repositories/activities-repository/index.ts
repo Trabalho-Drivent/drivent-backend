@@ -18,6 +18,11 @@ async function getActivitiesByParams(date: string) {
         },
       },
     },
+    orderBy: {
+      ActivitiesSchedule: {
+        startsAt: 'asc',
+      },
+    },
   });
 
   // Objeto para agrupar as atividades por local
