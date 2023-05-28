@@ -161,6 +161,7 @@ model ActivitiesSchedule {
   localId         Int
   ActivitiesLocal ActivitiesLocal @relation(fields: [localId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ActivitiesSchedule_fk0")
   Activities      Activities[]
+  @@index([startsAt, endsAt])
 }
 
 model UserActivities {

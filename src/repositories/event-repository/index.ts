@@ -5,6 +5,7 @@ async function findFirst() {
   const cacheKey = 'event';
   const chachedEvent = await redis.get(cacheKey);
 
+
   if (chachedEvent !== null) {
     const event = JSON.parse(chachedEvent);
     return event;
