@@ -48,34 +48,34 @@ async function main() {
   ];
 
   const activitiesSchedule = [
-    { id: 1, startsAt: new Date('2023-05-10T09:00:00.000'), endsAt: new Date('2023-05-10T10:00:00.000'), localId: 1 },
-    { id: 2, startsAt: new Date('2023-05-10T10:00:00.000'), endsAt: new Date('2023-05-10T12:00:00.000'), localId: 1 },
-    { id: 3, startsAt: new Date('2023-05-10T12:00:00.000'), endsAt: new Date('2023-05-10T13:00:00.000'), localId: 1 },
-    { id: 4, startsAt: new Date('2023-05-10T07:00:00.000'), endsAt: new Date('2023-05-10T08:00:00.000'), localId: 2 },
-    { id: 5, startsAt: new Date('2023-05-10T09:00:00.000'), endsAt: new Date('2023-05-10T10:00:00.000'), localId: 2 },
-    { id: 6, startsAt: new Date('2023-05-10T10:00:00.000'), endsAt: new Date('2023-05-10T11:00:00.000'), localId: 2 },
-    { id: 7, startsAt: new Date('2023-05-10T07:00:00.000'), endsAt: new Date('2023-05-10T09:00:00.000'), localId: 3 },
-    { id: 8, startsAt: new Date('2023-05-10T10:00:00.000'), endsAt: new Date('2023-05-10T11:00:00.000'), localId: 3 },
-    { id: 9, startsAt: new Date('2023-05-10T12:00:00.000'), endsAt: new Date('2023-05-10T14:00:00.000'), localId: 3 },
-    { id: 10, startsAt: new Date('2023-05-11T09:00:00.000'), endsAt: new Date('2023-05-11T10:00:00.000'), localId: 1 },
-    { id: 11, startsAt: new Date('2023-05-11T10:00:00.000'), endsAt: new Date('2023-05-11T12:00:00.000'), localId: 1 },
-    { id: 12, startsAt: new Date('2023-05-11T12:00:00.000'), endsAt: new Date('2023-05-11T13:00:00.000'), localId: 1 },
-    { id: 13, startsAt: new Date('2023-05-11T07:00:00.000'), endsAt: new Date('2023-05-11T08:00:00.000'), localId: 2 },
-    { id: 14, startsAt: new Date('2023-05-11T09:00:00.000'), endsAt: new Date('2023-05-11T10:00:00.000'), localId: 2 },
-    { id: 15, startsAt: new Date('2023-05-11T10:00:00.000'), endsAt: new Date('2023-05-11T11:00:00.000'), localId: 2 },
-    { id: 16, startsAt: new Date('2023-05-11T07:00:00.000'), endsAt: new Date('2023-05-11T09:00:00.000'), localId: 3 },
-    { id: 17, startsAt: new Date('2023-05-11T10:00:00.000'), endsAt: new Date('2023-05-11T11:00:00.000'), localId: 3 },
-    { id: 18, startsAt: new Date('2023-05-11T12:00:00.000'), endsAt: new Date('2023-05-11T14:00:00.000'), localId: 3 },
-    { id: 19, startsAt: new Date('2023-05-12T09:00:00.000'), endsAt: new Date('2023-05-12T10:00:00.000'), localId: 1 },
-    { id: 20, startsAt: new Date('2023-05-12T10:00:00.000'), endsAt: new Date('2023-05-12T12:00:00.000'), localId: 1 },
-    { id: 21, startsAt: new Date('2023-05-12T12:00:00.000'), endsAt: new Date('2023-05-12T13:00:00.000'), localId: 1 },
-    { id: 22, startsAt: new Date('2023-05-12T07:00:00.000'), endsAt: new Date('2023-05-12T08:00:00.000'), localId: 2 },
-    { id: 23, startsAt: new Date('2023-05-12T09:00:00.000'), endsAt: new Date('2023-05-12T10:00:00.000'), localId: 2 },
-    { id: 24, startsAt: new Date('2023-05-12T10:00:00.000'), endsAt: new Date('2023-05-12T11:00:00.000'), localId: 2 },
-    { id: 25, startsAt: new Date('2023-05-12T07:00:00.000'), endsAt: new Date('2023-05-12T09:00:00.000'), localId: 3 },
-    { id: 26, startsAt: new Date('2023-05-12T10:00:00.000'), endsAt: new Date('2023-05-12T11:00:00.000'), localId: 3 },
-    { id: 27, startsAt: new Date('2023-05-12T12:00:00.000'), endsAt: new Date('2023-05-12T14:00:00.000'), localId: 3 },
-    { id: 28, startsAt: new Date('2023-05-12T15:00:00.000'), endsAt: new Date('2023-05-12T16:00:00.000'), localId: 3 },
+    { id: 1, startsAt: dayjs().set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 2, startsAt: dayjs().set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 11).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 3, startsAt: dayjs().set('hour', 11).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 4, startsAt: dayjs().set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 5, startsAt: dayjs().set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 6, startsAt: dayjs().set('hour', 12).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 14).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 7, startsAt: dayjs().set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 8, startsAt: dayjs().set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 11).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 9, startsAt: dayjs().set('hour', 11).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 10, startsAt: dayjs().add(1, 'days').set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 11, startsAt: dayjs().add(1, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 12, startsAt: dayjs().add(1, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 13, startsAt: dayjs().add(1, 'days').set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 14, startsAt: dayjs().add(1, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 15, startsAt: dayjs().add(1, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour',14).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 16, startsAt: dayjs().add(1, 'days').set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 17, startsAt: dayjs().add(1, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 18, startsAt: dayjs().add(1, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(1, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 19, startsAt: dayjs().add(2, 'days').set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 20, startsAt: dayjs().add(2, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 21, startsAt: dayjs().add(2, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 1 },
+    { id: 22, startsAt: dayjs().add(2, 'days').set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 23, startsAt: dayjs().add(2, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 24, startsAt: dayjs().add(2, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 14).set('minute', 0).set('second', 0).toDate(), localId: 2 },
+    { id: 25, startsAt: dayjs().add(2, 'days').set('hour', 9).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 26, startsAt: dayjs().add(2, 'days').set('hour', 10).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 27, startsAt: dayjs().add(2, 'days').set('hour', 11).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 12).set('minute', 0).set('second', 0).toDate(), localId: 3 },
+    { id: 28, startsAt: dayjs().add(2, 'days').set('hour', 15).set('minute', 0).set('second', 0).toDate(), endsAt: dayjs().add(2, 'days').set('hour', 16).set('minute', 0).set('second', 0).toDate(), localId: 3 },
   ];
 
   const activies = [
@@ -236,6 +236,7 @@ async function main() {
     data: ticketType,
   });
 
+  await prisma.event.deleteMany({})
   await prisma.activities.deleteMany({});
   await prisma.activitiesSchedule.deleteMany({});
   await prisma.activitiesLocal.deleteMany({});

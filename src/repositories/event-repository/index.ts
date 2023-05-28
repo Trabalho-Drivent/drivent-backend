@@ -12,7 +12,7 @@ async function findFirst() {
 
   const event = await prisma.event.findFirst();
 
-  redis.set(cacheKey, JSON.stringify(event));
+  redis.setEx(cacheKey, 2, JSON.stringify(event));
 
   return event;
 }
