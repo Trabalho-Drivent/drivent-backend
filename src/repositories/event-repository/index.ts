@@ -5,14 +5,14 @@ async function findFirst() {
   const cacheKey = 'event';
   const chachedEvent = await redis.get(cacheKey);
 
-  if (chachedEvent) {
+  if (chachedEvent !== null) {
     const event = JSON.parse(chachedEvent);
     return event;
   }
 
   const event = await prisma.event.findFirst();
 
-  redis.set(cacheKey, JSON.stringify(event));
+  redis.setEx(cacheKey, 2, JSON.stringify(event));
 
   return event;
 }
