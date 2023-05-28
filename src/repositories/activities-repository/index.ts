@@ -45,6 +45,7 @@ async function getActivitiesByParams(date: string) {
         name: activity.name,
         startsAt: ActivitiesSchedule.startsAt,
         endsAt: ActivitiesSchedule.endsAt,
+        slot: activity.slot,
       });
     }
   });
