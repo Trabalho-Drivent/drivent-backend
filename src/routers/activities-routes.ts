@@ -1,11 +1,15 @@
 import { Router } from 'express';
 /* eslint-disable */
-import { getActivitiesByParams } from '@/controllers';
+import { getActivitiesByParams, addActivityInscription, getUserActivities } from '@/controllers';
 import { authenticateToken, validateParams } from '@/middlewares';
-import { activitieSchema } from '@/schemas/activitie-schemas';
+import { activitySchema } from '@/schemas/activities-schemas';
 /* eslint-enable */
 
 const activitiesRouter = Router();
-activitiesRouter.all('/*', authenticateToken).get('/:date', validateParams(activitieSchema), getActivitiesByParams);
+activitiesRouter
+  .all('/*', authenticateToken)
+  .post('/:activityId', addActivityInscription)
+  .get('/user', getUserActivities)
+  .get('/:date', validateParams(activitySchema), getActivitiesByParams);
 
 export { activitiesRouter };
