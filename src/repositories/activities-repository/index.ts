@@ -61,8 +61,54 @@ async function getActivitiesByParams(date: string) {
   return result;
 }
 
-const activitieRepository = {
+async function getActivityById(activityId: number) {
+  const activity = await prisma.activities.findFirst({
+    where: { id: activityId },
+    include: {
+      ActivitiesSchedule: true,
+    },
+  });
+
+  return activity;
+}
+
+async function getUserActivities(userId: number) {
+  const userActivities = await prisma.userActivities.findMany({
+    where: { userId },
+    include: {
+      Activities: {
+        include: {
+          ActivitiesSchedule: true,
+        },
+      },
+    },
+  });
+
+  return userActivities;
+}
+
+async function getActivityInscriptions(activityId: number) {
+  const activities = await prisma.userActivities.findMany({
+    where: { activityId },
+  });
+
+  return activities;
+}
+
+async function addActivityInscription(userId: number, activityId: number) {
+  const activities = await prisma.userActivities.create({
+    data: { userId, activityId },
+  });
+
+  return activities;
+}
+
+const activityRepository = {
   getActivitiesByParams,
+  getUserActivities,
+  getActivityInscriptions,
+  addActivityInscription,
+  getActivityById,
 };
 
-export default activitieRepository;
+export default activityRepository;

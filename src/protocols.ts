@@ -46,6 +46,6 @@ export type InputTicketBody = {
   ticketTypeId: number;
 };
 
-export type ActivitieParams = {
+export type ActivityParams = {
   date: string;
 };
